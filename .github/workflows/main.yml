@@ -20,12 +20,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - run: mkdir -p $GITHUB_WORKSPACE/artifact
-      - run: echo $GITHUB_WORKSPACE 
+      - run: mkdir -p ${{GITHUB_WORKSPACE}}/artifact
+      - run: echo ${{GITHUB_WORKSPACE}} 
 
-      - run: echo hello > $GITHUB_WORKSPACE/artifact/world.txt
+      - run: echo hello > ${{GITHUB_WORKSPACE}}/artifact/world.txt
 
       - uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: $GITHUB_WORKSPACE/artifact/world.txt
+          path: ${{GITHUB_WORKSPACE}}/artifact/world.txt
