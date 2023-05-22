@@ -30,7 +30,10 @@ jobs:
           name: my-artifact
           path: ${{ github.workspace }}/artifact/world.txt
           
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
-          name: ${{ github.workspace }}/artifact
           path: ${{ github.workspace }}/artifact
+          
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: ${{ github.workspace }}/artifact
