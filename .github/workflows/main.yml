@@ -2,6 +2,9 @@
 
 name: main-test
 
+env:
+  NO_OF_DAYS: 5
+
 # Controls when the workflow will run
 on:
 
