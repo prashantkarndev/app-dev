@@ -58,4 +58,4 @@ jobs:
           VAL_VAR: ${{ vars.rec_column3 }}
         
       - name: checking vairbale
-        run: echo "Envrionment variable $QN_VAR"
+        run: echo "Envrionment variable ${{vars.QN_VAR}}"
