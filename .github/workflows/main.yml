@@ -41,10 +41,11 @@ jobs:
         working-directory: ${{ github.workspace }}/artifact
         
       - name: Shell script execution
+        id: shell-1
         run: |
              while IFS="," read -r rec_column1 rec_column2 rec_column3 rec_column4
               do
-              echo "Displaying Record-$rec_column1"
+              echo "Displaying Record-$rec_column1" >> $GITHUB_OUTPUT
               echo "Quantity: $rec_column2"
               echo "Price: $rec_column3"
               echo "Value: $rec_column4"
@@ -52,3 +53,6 @@ jobs:
               done < <(tail -n +2 input.csv) 
 
         shell: bash
+        
+      - name: checking vairbale
+        run: echo "Envrionment variable $GITHUB_OUTPUT"
