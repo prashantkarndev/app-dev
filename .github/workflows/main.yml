@@ -4,6 +4,7 @@ name: main-test
 
 env:
   NO_OF_DAYS: 5
+  DAY_OF_WEEK: Monday
 
 # Controls when the workflow will run
 on:
@@ -61,4 +62,4 @@ jobs:
           VAL_VAR: ${{ vars.rec_column3 }}
         
       - name: checking vairbale
-        run: echo "Envrionment variable $env.NO_OF_DAYS"
+        run: echo "Envrionment variable $NO_OF_DAYS"
