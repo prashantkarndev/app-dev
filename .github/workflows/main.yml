@@ -3,7 +3,7 @@
 name: main-test
 
 env:
-  NO_OF_DAYS: 5
+  # NO_OF_DAYS: 5
   DAY_OF_WEEK: Monday
 
 # Controls when the workflow will run
