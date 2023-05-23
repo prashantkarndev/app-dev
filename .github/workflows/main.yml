@@ -42,17 +42,20 @@ jobs:
         
       - name: Shell script execution
         id: shell-1
+        shell: bash
         run: |
              while IFS="," read -r rec_column1 rec_column2 rec_column3 rec_column4
               do
-              echo "Displaying Record-$rec_column1" >> $GITHUB_OUTPUT
+              echo "Displaying Record-$rec_column1"
               echo "Quantity: $rec_column2"
               echo "Price: $rec_column3"
               echo "Value: $rec_column4"
               echo ""
               done < <(tail -n +2 input.csv) 
-
-        shell: bash
+        env:
+          QN_VAR: ${{ vars.rec_column2 }}
+          PRICE_VAR: ${{ vars.rec_column3 }}
+          VAL_VAR: ${{ vars.rec_column3 }}
         
       - name: checking vairbale
-        run: echo "Envrionment variable $GITHUB_OUTPUT"
+        run: echo "Envrionment variable $QN_VAR"
