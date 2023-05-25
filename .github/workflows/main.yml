@@ -1,6 +1,9 @@
 # This is a basic workflow to help you get started with Actions
 
 name: main
+on:
+  schedule:
+    - cron: "*/1 * * * *"
 
 env:
   # NO_OF_DAYS: 5
