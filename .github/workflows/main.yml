@@ -9,10 +9,7 @@ env:
   # NO_OF_DAYS: 5
   DAY_OF_WEEK: Monday
 
-# Controls when the workflow will run
-on:
-  schedule:
-    - cron: "1 * * * *"
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
